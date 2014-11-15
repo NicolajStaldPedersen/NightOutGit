@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="1200dp"
+    >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/standartbackgroundnotext">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Bar prefrerences"
+            android:textSize="30dp"
+            android:textColor="#FFFFFF"
+            android:id="@+id/txtviewBarPref" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:weightSum="100"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_weight="50"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="Bar type"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/textView" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bar"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/barCheckb"
+                    android:checked="false" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cafe"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/cafeCheckb"
+                    android:checked="false" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cocktail"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/cocktailCheckb"
+                    android:checked="false" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sportsbar"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/sportsbarCheckb"
+                    android:checked="false" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="Crowd"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/textViewstuff" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Young crowd"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/ycrowdCheckb"
+                    android:checked="false" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Old crowd"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/ocrowdCheckb"
+                    android:checked="false" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Crowded"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/crowdedCheckb"
+                    android:checked="false" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="Music"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/txtViewMusic" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="80's"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/Checkb80"
+                    android:checked="false" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="90's"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/Checkb90"
+                    android:checked="false" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00's"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/Checkb00"
+                    android:checked="false" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Techno"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/Checkbtechno"
+                    android:checked="false" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rock"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/CheckbRock"
+                    android:checked="false" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Latest"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/CheckbLatest"
+                    android:checked="false" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="Entertainment"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/textViewEntertainment" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="pool"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/CheckbPool"
+                    android:checked="false" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TableSoccer"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/CheckbTSoccer"
+                    android:checked="false" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dice"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/CheckbDice"
+                    android:checked="false" />
+            </LinearLayout>
+        </LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Search"
+            android:layout_marginTop="40dp"
+            android:id="@+id/btnSearch"/>
+
+
+
+    </LinearLayout>
+</ScrollView>

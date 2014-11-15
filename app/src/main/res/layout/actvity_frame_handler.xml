@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/standartbackgroundnotext">
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/frame1"></FrameLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp">
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/drinkimg2"
+            android:layout_weight="1"
+            android:id="@+id/btnBars"
+            android:background="@null"/>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/friendsimg2"
+            android:layout_weight="1"
+            android:id="@+id/btnFriends"
+            android:background="@null"/>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/profileimg2"
+            android:layout_weight="1"
+            android:id="@+id/btnProfile"
+            android:background="@null"/>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/carimg2"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:layout_weight="1"
+            android:id="@+id/btnGetHome"
+            android:background="@null"/>
+        </LinearLayout>
+</LinearLayout>
