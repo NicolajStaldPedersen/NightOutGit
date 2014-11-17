@@ -16,14 +16,13 @@ import org.json.JSONObject;
 import java.util.UUID;
 
 /**
- * Created by Jale on 19-Oct-14.
+ * Created by Nicolaj Pedersen on 19-Oct-14.
  */
 public class HTTPLogic {
 
     boolean returnValue;
-    public boolean getPersonByLogin(String email,String password, Context context){
+    public void getPersonByLogin(String email, String password, Context context){
 
-        returnValue = false;
         AsyncHttpClient client = new AsyncHttpClient();
         RequestParams params = new RequestParams();
         params.put("Email", email);
@@ -46,13 +45,12 @@ public class HTTPLogic {
                     Profile person = new Profile(response);
                     if(person.getId().equals(UUID.fromString("00000000-0000-0000-0000-000000000000"))){
 
-                        returnValue = false;
+
 //                         login failed
 
                     }else{
                         // login success
-                        new Profile(response);
-                        returnValue = true;
+
 
                     }
                 }
@@ -70,27 +68,18 @@ public class HTTPLogic {
 
         }catch (Exception e){
         }
-        return returnValue;
     }
 
     public boolean getPersonFriendsByLogin(String email,String password, Context context){
 
         returnValue = false;
         AsyncHttpClient client = new AsyncHttpClient();
-        RequestParams params = new RequestParams();
-        params.put("Email", email);
-        params.put("Password", password);
 
         client.addHeader("Content-Type","application/json");
         try{
             JSONObject loginInModel = new JSONObject();
 
-            loginInModel.put("Email", email);
-            loginInModel.put("Password", password);
-            StringEntity entity = new StringEntity(loginInModel.toString());
-
-            entity.setContentType(new BasicHeader(HTTP.CONTENT_TYPE,"application/json"));
-            client.post(context,getFriendsByLoginUrl(), entity,"application/json", new JsonHttpResponseHandler() {
+            client.get(context,getFriendsByLoginUrl(), new JsonHttpResponseHandler() {
 
                 // When the response returned by REST has Http response code '200'
                 @Override
@@ -99,7 +88,7 @@ public class HTTPLogic {
                     if(person.getId().equals(UUID.fromString("00000000-0000-0000-0000-000000000000"))){
 
                         returnValue = false;
-//                         login failed
+                        // login failed
 
                     }else{
                         // login success
@@ -144,8 +133,8 @@ public class HTTPLogic {
 
     }
 
-    public String getFriendsByLoginUrl(){
-        return "http://nightoutapi.azurewebsites.net/api/persons/friends";
+    public static String getFriendsByLoginUrl(){
+        return "http://10.0.2.2:58001/api/persons/friends";
 
     }
 

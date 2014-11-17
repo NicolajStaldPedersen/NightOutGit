@@ -1,5 +1,6 @@
 package com.example.jale.nightoutgit.activities_and_fragments.activitiesFragments;
 
+import com.example.jale.nightoutgit.activities_and_fragments.data.*;
 import android.app.Fragment;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -13,7 +14,7 @@ import android.widget.TextView;
 import com.example.jale.nightoutgit.R;
 
 /**
- * Created by Jale on 15-Nov-14.
+ * Created by Nicolaj Pedersen on 15-Nov-14.
  */
 public class ProfileFragment extends Fragment implements View.OnClickListener {
 
@@ -27,7 +28,9 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         profileView = i.inflate(R.layout.fragment_profile,container,false);
         nextImg =false;
         profileName = (TextView) profileView.findViewById(R.id.profileName);
+        profileName.setText(Profile.firstName + " " + Profile.lastName); // setting profile name
         profileEmail = (TextView) profileView.findViewById(R.id.profileEmail);
+        profileEmail.setText(Profile.email);
         btnchangePicture = (Button) profileView.findViewById(R.id.btnChangePic);
         btnchangePicture.setOnClickListener(this);
         profilePic = (ImageView) profileView.findViewById(R.id.imgvwProfilePic);
@@ -40,11 +43,9 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         if(v == btnchangePicture){
             if(nextImg){
-                Drawable d = Drawable.createFromPath("drawable/male1.png");
-                profilePic.setImageDrawable(d);
+                profilePic.setImageResource(R.drawable.male2);
             }else{
-                Drawable d = Drawable.createFromPath("drawable/male2.png");
-                profilePic.setImageDrawable(d);
+                profilePic.setImageResource(R.drawable.male1);
             }
             nextImg = !nextImg;
         }

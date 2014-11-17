@@ -11,7 +11,7 @@ import android.widget.CheckBox;
 import com.example.jale.nightoutgit.R;
 
 /**
- * Created by Jale on 15-Nov-14.
+ * Created by Nicolaj Pedersen on 15-Nov-14.
  */
 public class BarPreferencesFragment extends Fragment implements View.OnClickListener {
 
