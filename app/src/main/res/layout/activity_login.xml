@@ -27,6 +27,7 @@
         android:background="#FFFFFFFF"
         android:padding="5dp"
         android:layout_margin="10dp"
+        android:inputType="textEmailAddress"
         android:id="@+id/edtxtEmail"/>
 
     <TextView
@@ -43,6 +44,7 @@
         android:background="#FFFFFFFF"
         android:padding="5dp"
         android:layout_margin="10dp"
+        android:inputType="textPassword"
         android:id="@+id/edtxtPassword"/>
 
     <LinearLayout
@@ -71,5 +73,6 @@
         android:text="Log In"
         android:id="@+id/btnLogIn"
         android:layout_margin="20dp"/>
+
 
 </LinearLayout>

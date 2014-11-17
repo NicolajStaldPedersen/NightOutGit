@@ -6,6 +6,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
@@ -15,6 +16,8 @@ import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.apache.http.Header;
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.UUID;
@@ -43,6 +46,7 @@ public class MainFragmentHandlerActivity extends Activity implements View.OnClic
         if(savedInstanceState == null){
 
             getPersonFriendsByLogin(Profile.getEmail(),Profile.getPassword());
+
 
             FragmentTransaction fm = getFragmentManager().beginTransaction();
             fm.add(R.id.frame1,new ProfileFragment()).commit();
@@ -73,21 +77,31 @@ public class MainFragmentHandlerActivity extends Activity implements View.OnClic
         AsyncHttpClient client = new AsyncHttpClient();
         String auth =email+":"+password;
         String encodedAuth = Base64.encodeToString(auth.getBytes(),Base64.DEFAULT);
-        encodedAuth = "Tmljb2xhanNwQGxpdmUuZGs6TmlnaHRvdXQ=";
         System.out.println("info : " +auth + "  --  coded : "+encodedAuth);
 
         client.addHeader("Authorization","Basic "+encodedAuth);
         client.addHeader("Content-Type","application/json");
         try{
-            JSONObject loginInModel = new JSONObject();
 
+            Log.d("YUDSMKRIV YURL ", HTTPLogic.getFriendsByLoginUrl());
             client.get(this, HTTPLogic.getFriendsByLoginUrl(), new JsonHttpResponseHandler() {
 
                 // When the response returned by REST has Http response code '200'
                 @Override
-                public void onSuccess(int i, Header[] headers, JSONObject response) {
+                public void onSuccess(int i, Header[] headers, JSONArray response) {
 
                     String s = null;
+
+                    for(int f =0;f< response.length();f++){
+                        try {
+                            Profile.friends.add(new Friend((JSONObject) response.get(f)));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    for(Friend f :Profile.friends){
+                        System.out.println(f.getFirstName());
+                    }
 
 
                 }
@@ -97,13 +111,14 @@ public class MainFragmentHandlerActivity extends Activity implements View.OnClic
                                       Throwable throwable,
                                       JSONObject errorResponse){
 //                    login failed
-
+                    throwable.printStackTrace();
                 }
 
             });
 
 
         }catch (Exception e){
+            e.printStackTrace();
         }
     }
 }

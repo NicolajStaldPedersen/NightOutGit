@@ -1,5 +1,7 @@
 package com.example.jale.nightoutgit.activities_and_fragments.data;
 
+import android.location.Location;
+
 import java.util.Date;
 
 /**
@@ -8,12 +10,21 @@ import java.util.Date;
 public class Checkin {
     Date date;
     String place;
+    Location location;
     public Checkin(){
 
     }
     public Checkin(Date checkin, String place){
         this.date = checkin;
         this.place = place;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
     public Date getDate() {

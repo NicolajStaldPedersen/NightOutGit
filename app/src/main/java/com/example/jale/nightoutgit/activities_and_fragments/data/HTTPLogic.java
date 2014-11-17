@@ -134,7 +134,7 @@ public class HTTPLogic {
     }
 
     public static String getFriendsByLoginUrl(){
-        return "http://10.0.2.2:58001/api/persons/friends";
+        return "http://nightoutapi.azurewebsites.net/api/persons/friends";
 
     }
 
