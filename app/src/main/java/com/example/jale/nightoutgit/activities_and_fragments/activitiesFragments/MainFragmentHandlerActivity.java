@@ -67,7 +67,7 @@ public class MainFragmentHandlerActivity extends Activity implements View.OnClic
             fm.replace(R.id.frame1,new ProfileFragment()).commit();
         }else if(v == btnGetHome){
             FragmentTransaction fm = getFragmentManager().beginTransaction();
-            fm.replace(R.id.frame1,new MapFragment()).commit();
+            fm.replace(R.id.frame1,new OpenstreetmapFragment()).commit();
         }
 
     }
@@ -83,14 +83,11 @@ public class MainFragmentHandlerActivity extends Activity implements View.OnClic
         client.addHeader("Content-Type","application/json");
         try{
 
-            Log.d("YUDSMKRIV YURL ", HTTPLogic.getFriendsByLoginUrl());
             client.get(this, HTTPLogic.getFriendsByLoginUrl(), new JsonHttpResponseHandler() {
 
                 // When the response returned by REST has Http response code '200'
                 @Override
                 public void onSuccess(int i, Header[] headers, JSONArray response) {
-
-                    String s = null;
 
                     for(int f =0;f< response.length();f++){
                         try {
